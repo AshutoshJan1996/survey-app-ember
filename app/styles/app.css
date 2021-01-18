@@ -1,0 +1,64 @@
+.body {
+    padding: 15px;
+}
+
+body {
+    background: #f3f3f3;
+}
+
+.failed {
+    color: red;
+}
+
+.signForm {
+    margin: 0 23%;
+}
+
+.listPage {
+    padding-top: 50px;
+}
+
+.listUser {
+    margin: 1rem;
+}
+
+.listUser:hover {
+    background-color: #f9f9f9;
+    cursor:pointer;
+}
+
+.capital {
+    text-transform: capitalize;
+}
+
+@media (max-width: 900px) {
+    .signForm {
+        margin: 0 10%;
+    }
+}
+
+@media (max-width: 600px) {
+	.signForm {
+        margin: 0 0;
+    }
+}
+
+@media (max-width: 573px) {
+	.listPage {
+        padding-top: 85px;
+    }
+}
+
+/* ----- css for create/list survey --------  */
+.createPage {
+    margin: 3.5rem 9.5rem 0 9.5rem;
+}
+
+.removeItem {
+    color: red;
+    cursor:pointer;
+}
+
+.listSurvey {
+    margin: 1rem 2rem;
+}

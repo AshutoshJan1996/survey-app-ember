@@ -1,0 +1,6 @@
+<NavBar @isadmin={{true}} />
+<div class="listPage">
+  {{#each @model as |user|}}
+    <UserCompo @user={{user}} /> 
+  {{/each}}
+</div>

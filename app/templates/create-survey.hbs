@@ -1,0 +1,77 @@
+<NavBar @isadmin={{true}} />
+<div class="createPage">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label>Survey Titel<span class="failed">*</span></label>
+                <Input class="form-control" @type='text' @value={{titel}} />
+            </div>
+        </div>
+    </div>
+    {{#each this.questionList as |ques ind|}}
+    <QuesCompo @ques={{ques}} @ind={{ind}} @removeQuestion={{removeQuestion}} />
+    {{/each}}
+    <div class="card" style="margin-top: 1rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-1">
+                        <label>Question:</label>
+                    </div>
+                    <div class="col-11">
+                        <Textarea class="form-control" rows="1" cols="7" @value={{question}} />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-1">
+                        <label>Type:</label>
+                    </div>
+                    <div class="col-11">
+                        <select class="form-control" style="width: 53%;" onchange={{action "setSelection"
+                            value="target.value" }}>
+                            <option value="checkBox">Check Box</option>
+                            <option value="radioBox">Radio Box</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-1">
+                        <label>Option:</label>
+                    </div>
+                    <div class="col-6">
+                        <Input class="form-control" @type='text' @value={{opation}} />
+                    </div>
+                    <div class="col-5">
+                        <button type="button" class="btn btn-light btn-sm" {{on 'click' onAddOpation}}>Add
+                            Opation</button>
+                        <button type="button" class="btn btn-secondary btn-sm" {{on 'click' onAddQuestion}}>Add
+                            Question</button>
+                    </div>
+                </div>
+            </div>
+            {{#each this.opationList as |opat ind|}}
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-1">
+                        <label>Option:</label>
+                    </div>
+                    <div class="col-10">
+                        <h6 class="capital">{{opat}}</h6>
+                    </div>
+                    <div class="col-1">
+                        <h6 class="removeItem" {{on "click" (fn this.removeOpation ind)}}>X</h6>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="text-center" style="margin-top: 1rem;">
+        <button type="button" class="btn btn-danger" {{on 'click' resetSurvey}}>Reset Survey</button>
+        <button type="button" class="btn btn-primary" {{on 'click' submitSurvey}}>Submit Survey</button>
+    </div>
+</div>

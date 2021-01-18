@@ -1,0 +1,6 @@
+<NavBar @isadmin={{true}} />
+<div class="listPage">
+    {{#each @model as |survey|}}
+    <SurveyCompo @survey={{survey}} />
+    {{/each}}
+</div>

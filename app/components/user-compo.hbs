@@ -1,0 +1,19 @@
+{{#if this.isAdmin}}
+<div class="card listUser" {{on 'click' goToUserDetail}}>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <h5 class="capital">{{@user.firstName}} {{@user.lastName}}</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>User Name:</label> {{@user.userName}}
+            </div>
+            <div class="col">
+                <label>Number of Survey's assign:</label> {{this.assignSurvey}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

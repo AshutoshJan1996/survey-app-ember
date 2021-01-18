@@ -1,0 +1,14 @@
+<nav class="navbar fixed-top navbar-light" style="background-color: #e3e6e6;">
+  <div class="nav">
+    <a class="navbar-brand">Survey App</a>
+    {{#if @isadmin}}
+    <LinkTo @route="admin" class="nav-link">User List</LinkTo>
+    <LinkTo @route="survey-list" class="nav-link">Survey List</LinkTo>
+    <LinkTo @route="create-survey" class="nav-link">Create Survey</LinkTo>
+    {{/if}}
+  </div>
+  <div class="justify-content-end">
+    <button type="button" class="btn btn-primary" 
+     {{on 'click' onClickLogOut}} >Log Out</button>
+  </div>
+</nav>
